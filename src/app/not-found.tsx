@@ -6,8 +6,6 @@ import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
-import '@/assets/style/notfound.css';
-
 export default function Custom404(): ReactElement {
 	const container = useRef(null);
 

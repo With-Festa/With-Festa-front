@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import './globals.css';
 import Header from '@/components/common/header';
 import Footer from '@/components/common/footer';
+import '@/style/global.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,7 +20,7 @@ export default function RootLayout({
 		<html lang='en'>
 			<body className={`bg-[#FCE8F1] ${inter.className}`}>
 				<div className='flex gap-24 items-center ml-56 mr-20  min-h-screen'>
-					<div className="w-5/6  max-w-96 h-96 bg-cover bg-center bg-[url('./assets/images/background_01.png')] rounded-3xl"></div>
+					<div className="w-5/6  max-w-96 h-96 bg-cover bg-center bg-[url('/images/background_01.png')] rounded-3xl"></div>
 					<div className='min-w-64 max-w-xl w-full bg-white'>
 						<Header />
 						<div className='min-h-[calc(100vh-112px)] p-4'>{children}</div>

@@ -13,6 +13,7 @@ import {
 	IoPersonOutline,
 } from 'react-icons/io5';
 
+import { NAV_TITLES } from '@/contants/navTitle';
 interface NavProps {
 	href: string;
 	title: string;
@@ -21,7 +22,7 @@ interface NavProps {
 }
 
 const NavItem = ({ href, title, icon, login }: NavProps) => {
-	const isLogin = false;
+	const isLogin = true;
 	return (
 		<>
 			{login === true && isLogin && (
@@ -41,14 +42,23 @@ const NavItem = ({ href, title, icon, login }: NavProps) => {
 };
 export default function Footer() {
 	const navItems = [
-		{ href: '/', title: '메인', icon: <AiOutlineHome size='21' /> },
-		{ href: '/montly', title: '월별', icon: <IoTodayOutline size='21' /> },
-		{ href: '/chat', title: '채팅', icon: <IoChatbubbleEllipsesOutline size='21' /> },
-		{ href: '/notification', title: '알림', icon: <IoNotificationsOutline size='21' /> },
-		{ href: '/setting', title: '세팅', icon: <IoSettingsOutline size='21' />, login: true },
+		{ href: '/', title: NAV_TITLES.MAIN, icon: <AiOutlineHome size='21' /> },
+		{ href: '/montly', title: NAV_TITLES.MONTHLY, icon: <IoTodayOutline size='21' /> },
+		{ href: '/chat', title: NAV_TITLES.CHAT, icon: <IoChatbubbleEllipsesOutline size='21' /> },
 		{
-			href: '/signin',
-			title: '로그인/가입',
+			href: '/notification',
+			title: NAV_TITLES.NOTIFICATION,
+			icon: <IoNotificationsOutline size='21' />,
+		},
+		{
+			href: '/setting',
+			title: NAV_TITLES.SETTING,
+			icon: <IoSettingsOutline size='21' />,
+			login: true,
+		},
+		{
+			href: '/signUp',
+			title: NAV_TITLES.SIGN_UP,
 			icon: <IoPersonOutline size='20' />,
 			login: false,
 		},
